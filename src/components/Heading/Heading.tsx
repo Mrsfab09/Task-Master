@@ -1,7 +1,5 @@
-import { Center } from "@chakra-ui/layout";
-import { FaRegMoon } from "react-icons/fa";
-import { FiSun } from "react-icons/fi";
-import Button from "../Button/Button";
+import { Center } from "@chakra-ui/react";
+import Mode from "../Mode/Mode";
 
 interface HeadingProps {
   props: string;
@@ -9,17 +7,14 @@ interface HeadingProps {
 
 const Heading: React.FC<HeadingProps> = ({ props }) => {
   return (
-    <Center>
-      <div className="">
-        <h1 className="mt-20 font-bold text-4xl tracking-[10px]">{props}</h1>
-        <Button>
-          <FaRegMoon />
-        </Button>
-        <Button>
-          <FiSun />
-        </Button>
-      </div>
-    </Center>
+    <>
+      <Center>
+        <h1 className="text-neutral-500 font-semibold italic text-5xl tracking-widest mt-20 mb-10">
+          {props}
+        </h1>
+      </Center>
+      <Mode />
+    </>
   );
 };
 export default Heading;

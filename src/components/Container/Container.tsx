@@ -8,7 +8,7 @@ interface ContainerProps {
 const Container: React.FC<ContainerProps> = ({ children }) => {
   return (
     <Center>
-      <div className="w-4/5 flex align-center justify-around m-20 p-20 mt-10">
+      <div className="w-4/5 flex align-center justify-around p-20">
         {children}
       </div>
     </Center>

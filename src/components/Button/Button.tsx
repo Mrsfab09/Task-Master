@@ -2,11 +2,21 @@ import { ReactNode } from "react";
 
 interface ButtonProps {
   children: ReactNode;
+  color: string;
+  padding: string;
+  hoverColor: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ children }) => {
+const Button: React.FC<ButtonProps> = ({
+  children,
+  color,
+  padding,
+  hoverColor,
+}) => {
   return (
-    <button className="bg-neutral-100 border-none rounded-lg p-3">
+    <button
+      className={`${color} border-none rounded-lg ${padding} hover:${hoverColor}`}
+    >
       {children}
     </button>
   );
