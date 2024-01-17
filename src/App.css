@@ -5,3 +5,11 @@
   text-align: center;
   box-sizing: border-box;
 }
+
+#light {
+  background-color: #ffffff;
+}
+
+#dark {
+  background-color: #121a26;
+}

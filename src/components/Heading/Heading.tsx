@@ -1,5 +1,4 @@
 import { Center } from "@chakra-ui/react";
-import Mode from "../Mode/Mode";
 
 interface HeadingProps {
   props: string;
@@ -13,7 +12,6 @@ const Heading: React.FC<HeadingProps> = ({ props }) => {
           {props}
         </h1>
       </Center>
-      <Mode />
     </>
   );
 };

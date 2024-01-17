@@ -1,21 +1,21 @@
 import { FaRegMoon } from "react-icons/fa";
-import Button from "../Button/Button";
 import { FiSun } from "react-icons/fi";
-// import { useState } from "react";
-
-// interface ModeProps {
-//   onClick: void;
-//   onChange: void;
-// }
+import Button from "../Button/Button";
 
 const Mode = () => {
+  // const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // const toggleTheme = () => {
+  //   setIsDarkMode((prevMode) => !prevMode);
+  // };
+
   return (
     <div className="flex flex-row justify-center align-center gap-12">
-      <Button color="bg-neutral-100" padding="p-3" hoverColor="bg-neutral-200">
-        <FaRegMoon />
-      </Button>
-      <Button color="bg-neutral-100" padding="p-3" hoverColor="bg-neutral-200">
+      <Button onClick={() => {}} color="bg-neutral-100" padding="p-3">
         <FiSun />
+      </Button>
+      <Button color="bg-neutral-100" padding="p-3">
+        <FaRegMoon />
       </Button>
     </div>
   );
