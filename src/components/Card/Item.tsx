@@ -7,8 +7,10 @@ import {
   AlertDialogHeader,
   AlertDialogOverlay,
   Button,
+  Editable,
+  EditableInput,
+  EditablePreview,
   useDisclosure,
-  useToast,
 } from "@chakra-ui/react";
 import React from "react";
 interface ItemProps {
@@ -18,17 +20,20 @@ interface ItemProps {
 const Item: React.FC<ItemProps> = ({ colorItem }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
-  const toast = useToast();
   return (
     <div
       className={`flex flex-row align-center mt-7 ${colorItem} rounded-lg p-3 gap-5`}
     >
-      <DragHandleIcon cursor={"grab"} marginTop={"3px"} />
+      <DragHandleIcon cursor={"grab"} marginTop={"8px"} />
       <div className="flex flex-row align-center gap-28">
-        <p>Hello</p>
+        <Editable defaultValue="Hello">
+          <EditablePreview />
+          <EditableInput />
+        </Editable>
         <div className="flex align-center gap-4">
-          <EditIcon onClick={() => {}} marginTop={"3px"} cursor={"pointer"} />
-          <DeleteIcon onClick={onOpen} marginTop={"3px"} cursor={"pointer"} />
+          <EditIcon onClick={() => {}} marginTop={"10px"} cursor={"pointer"} />
+          <DeleteIcon onClick={onOpen} marginTop={"10px"} cursor={"pointer"} />
+          {/* Alert */}
           <AlertDialog
             isOpen={isOpen}
             leastDestructiveRef={cancelRef}
@@ -45,23 +50,8 @@ const Item: React.FC<ItemProps> = ({ colorItem }) => {
                 </AlertDialogBody>
 
                 <AlertDialogFooter>
-                  <Button ref={cancelRef} onClick={onClose}>
-                    Cancel
-                  </Button>
-                  <Button
-                    onClick={() =>
-                      toast({
-                        title: "Task added",
-                        description: "The task was added successfully ",
-                        status: "error",
-                        duration: 5000,
-                        position: "top",
-                        isClosable: true,
-                      })
-                    }
-                    colorScheme="red"
-                    ml={3}
-                  >
+                  <Button onClick={onClose}>Cancel</Button>
+                  <Button onClick={onClose} colorScheme="red" ml={3}>
                     Delete
                   </Button>
                 </AlertDialogFooter>
