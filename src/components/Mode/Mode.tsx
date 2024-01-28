@@ -3,15 +3,9 @@ import { FiSun } from "react-icons/fi";
 import Button from "../Button/Button";
 
 const Mode = () => {
-  // const [isDarkMode, setIsDarkMode] = useState(false);
-
-  // const toggleTheme = () => {
-  //   setIsDarkMode((prevMode) => !prevMode);
-  // };
-
   return (
     <div className="flex flex-row justify-center align-center gap-12">
-      <Button onClick={() => {}} color="bg-neutral-100" padding="p-3">
+      <Button color="bg-neutral-100" padding="p-3">
         <FiSun />
       </Button>
       <Button color="bg-neutral-100" padding="p-3">

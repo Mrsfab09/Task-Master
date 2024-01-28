@@ -1,15 +1,18 @@
 import { AddIcon } from "@chakra-ui/icons";
 import { Badge } from "@chakra-ui/layout";
 import { GoTasklist } from "react-icons/go";
-import { ReactNode } from "react";
-import { Button, useToast } from "@chakra-ui/react";
+import { ReactNode, useState } from "react";
+import { Button } from "@chakra-ui/react";
 
 interface CardProps {
   children: ReactNode;
 }
 
 const Todo: React.FC<CardProps> = ({ children }) => {
-  const toast = useToast();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
   return (
     <div className="flex justify-between align-center">
       <div className="min-w-72 max-w-md bg-blue-200 rounded-xl p-5 m-10 overflow-y-auto">
@@ -28,16 +31,7 @@ const Todo: React.FC<CardProps> = ({ children }) => {
             marginTop={"1"}
             variant={"unstyled"}
             color={"rgb(2 132 199)"}
-            onClick={() =>
-              toast({
-                title: "Task added",
-                description: "The task was added successfully ",
-                status: "success",
-                duration: 5000,
-                position: "top",
-                isClosable: true,
-              })
-            }
+            onClick={openModal}
           >
             New
           </Button>
