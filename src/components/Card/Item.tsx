@@ -22,7 +22,7 @@ const Item: React.FC<ItemProps> = ({ colorItem }) => {
   const cancelRef = React.useRef();
   return (
     <div
-      className={`flex flex-row align-center mt-7 ${colorItem} rounded-lg p-3 gap-5`}
+      className={`flex flex-row align-center mt-7 ${colorItem} rounded-lg p-3 gap-5 cursor-pointer`}
     >
       <DragHandleIcon cursor={"grab"} marginTop={"8px"} />
       <div className="flex flex-row align-center gap-28">
