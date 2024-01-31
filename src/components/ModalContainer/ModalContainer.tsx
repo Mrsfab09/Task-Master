@@ -14,18 +14,21 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { Textarea } from "@chakra-ui/react";
+import { useState } from "react";
 
 const ModalContainer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [taskValue, setTaskValue] = useState("");
+  const [dateValue, setDateValue] = useState("");
+  const [descValue, setDescValue] = useState("");
   const toast = useToast();
   const handleAddTask = () => {
-    //Logika dodawania zadania
     onClose();
     toast({
-      title: "Task added.",
-      description: "You've added a new task.",
+      title: taskValue,
+      description: descValue + " \ndata: " + dateValue,
       status: "success",
-      duration: 9000,
+      duration: 5000,
       isClosable: true,
     });
   };
@@ -46,19 +49,36 @@ const ModalContainer = () => {
           <ModalHeader>Add task</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Stack spacing={8}>
-              <Input variant="flushed" placeholder="Name task" />
-              <p className="text-gray-400">
-                Select the date of task completion:
-              </p>
-              <Input
-                mt={-5}
-                placeholder="Select Date and Time"
-                size="md"
-                type="datetime-local"
-              />
-              <Textarea placeholder="Description" />
-            </Stack>
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+              }}
+            >
+              <Stack spacing={8}>
+                <Input
+                  value={taskValue}
+                  onChange={(event) => setTaskValue(event.target.value)}
+                  variant="flushed"
+                  placeholder="Name task"
+                />
+                <p className="text-gray-400">
+                  Select the date of task completion:
+                </p>
+                <Input
+                  value={dateValue}
+                  onChange={(event) => setDateValue(event.target.value)}
+                  mt={-5}
+                  placeholder="Select Date and Time"
+                  size="md"
+                  type="datetime-local"
+                />
+                <Textarea
+                  value={descValue}
+                  onChange={(event) => setDescValue(event.target.value)}
+                  placeholder="Description"
+                />
+              </Stack>
+            </form>
           </ModalBody>
 
           <ModalFooter>
