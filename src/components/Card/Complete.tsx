@@ -1,12 +1,7 @@
 import { Badge } from "@chakra-ui/layout";
-import { ReactNode } from "react";
 import { MdOutlineTaskAlt } from "react-icons/md";
 
-interface CardProps {
-  children: ReactNode;
-}
-
-const Complete: React.FC<CardProps> = ({ children }) => {
+const Complete = () => {
   return (
     <div className="flex justify-between align-center">
       <div className={`min-w-72 min-h-96 bg-emerald-200 rounded-xl p-5 m-10`}>
@@ -18,7 +13,6 @@ const Complete: React.FC<CardProps> = ({ children }) => {
             </Badge>
           </span>
         </div>
-        {children}
       </div>
     </div>
   );

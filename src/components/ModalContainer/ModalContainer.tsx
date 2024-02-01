@@ -26,7 +26,7 @@ const ModalContainer = () => {
     onClose();
     toast({
       title: taskValue,
-      description: descValue + " \ndata: " + dateValue,
+      description: descValue + " data: " + dateValue,
       status: "success",
       duration: 5000,
       isClosable: true,

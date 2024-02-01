@@ -3,7 +3,6 @@ import { createContext, useEffect, useState } from "react";
 import Container from "./components/Container/Container";
 import Todo from "./components/Card/Todo";
 import Complete from "./components/Card/Complete";
-import Item from "./components/Card/Item";
 import Heading from "./components/Heading/Heading";
 import Mode from "./components/Mode/Mode";
 import Loader from "./components/Loader/Loader";
@@ -29,15 +28,12 @@ export default function App() {
           <Heading>TaskMaster</Heading>
           <Mode />
           <Container>
-            <Todo>
-              <Item colorItem="bg-blue-300" />
-            </Todo>
-            <Complete>
-              <Item colorItem="bg-emerald-300" />
-            </Complete>
+            <Todo></Todo>
+            <Complete></Complete>
           </Container>
         </>
       )}
     </ChakraProvider>
   );
 }
+// https://github.com/Jak-zaczac-programowac/zrozumiecreact-modul-4/blob/main/src/App.jsx

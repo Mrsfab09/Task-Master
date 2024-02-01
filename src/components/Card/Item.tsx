@@ -7,9 +7,6 @@ import {
   AlertDialogHeader,
   AlertDialogOverlay,
   Button,
-  Editable,
-  EditableInput,
-  EditablePreview,
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
@@ -25,11 +22,10 @@ const Item: React.FC<ItemProps> = ({ colorItem }) => {
       className={`flex flex-row align-center mt-7 ${colorItem} rounded-lg p-3 gap-5 cursor-pointer`}
     >
       <DragHandleIcon cursor={"grab"} marginTop={"8px"} />
-      <div className="flex flex-row align-center gap-28">
-        <Editable defaultValue="Hello">
-          <EditablePreview />
-          <EditableInput />
-        </Editable>
+      <div className="flex flex-row align-center gap-10">
+        {/* Editable */}
+        <p>Hello</p>
+        <p className="text-xs text-gray-500">17.32.2024</p>
         <div className="flex align-center gap-4">
           <EditIcon onClick={() => {}} marginTop={"10px"} cursor={"pointer"} />
           <DeleteIcon onClick={onOpen} marginTop={"10px"} cursor={"pointer"} />
@@ -64,3 +60,6 @@ const Item: React.FC<ItemProps> = ({ colorItem }) => {
   );
 };
 export default Item;
+//   Editable,
+//  EditableInput,
+//  EditablePreview,

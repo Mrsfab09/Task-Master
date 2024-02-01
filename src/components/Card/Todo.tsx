@@ -1,12 +1,9 @@
 import { Badge } from "@chakra-ui/layout";
 import { GoTasklist } from "react-icons/go";
-import { ReactNode } from "react";
 import ModalContainer from "../ModalContainer/ModalContainer";
-interface CardProps {
-  children: ReactNode;
-}
+import Item from "./Item";
 
-const Todo: React.FC<CardProps> = ({ children }) => {
+const Todo = () => {
   return (
     <div className="flex justify-between align-center">
       <div className="min-w-72 max-w-md bg-blue-200 rounded-xl p-5 m-10 overflow-y-auto">
@@ -18,7 +15,7 @@ const Todo: React.FC<CardProps> = ({ children }) => {
             </Badge>
           </span>
         </div>
-        {children}
+        <Item colorItem="bg-blue-300" />
         <div className="w-full flex align-center mt-60 rounded cursor-pointer p-1 gap-2">
           <ModalContainer />
         </div>
