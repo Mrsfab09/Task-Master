@@ -35,11 +35,18 @@ const ModalContainer = () => {
   return (
     <>
       <Button
-        leftIcon={<AddIcon color="rgb(2 132 199)" marginTop={"4"} />}
+        leftIcon={
+          <AddIcon
+            color="rgb(2 132 199)"
+            marginTop={"4"}
+            className="dark:text-sky-300"
+          />
+        }
         marginTop={"1"}
         variant={"unstyled"}
         color={"rgb(2 132 199)"}
         onClick={onOpen}
+        className="dark:text-sky-300"
       >
         New
       </Button>

@@ -5,7 +5,7 @@ interface ButtonProps {
   color?: string;
   padding?: string;
   hoverColor?: string;
-  onClick?: (event: MouseEvent) => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -13,9 +13,11 @@ const Button: React.FC<ButtonProps> = ({
   color,
   padding,
   hoverColor,
+  onClick,
 }) => {
   return (
     <button
+      onClick={onClick}
       className={`flex flex-col justify-center ${color} border-none rounded-lg ${padding} hover:${hoverColor} transition`}
     >
       {children}

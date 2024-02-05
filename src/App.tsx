@@ -11,7 +11,6 @@ export const ThemeContext = createContext(null);
 
 export default function App() {
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
@@ -24,14 +23,14 @@ export default function App() {
       {loading ? (
         <Loader />
       ) : (
-        <>
+        <div className="min-h-screen dark:text-gray-100 dark:bg-gray-900 duration-100">
           <Heading>TaskMaster</Heading>
           <Mode />
           <Container>
             <Todo></Todo>
             <Complete></Complete>
           </Container>
-        </>
+        </div>
       )}
     </ChakraProvider>
   );
