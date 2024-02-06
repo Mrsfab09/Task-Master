@@ -14,6 +14,6 @@
 </div>
 
 <p>
-TaskMaster is a simple task management application. Thanks to the ability to choose the task completion date, the user always knows about each task. The application offers drag and drop items to the appropriate containers. 
-TaskMaster is my first own app written with react and typescript. 
+TaskMaster is a simple task management application. With the ability to choose the end date of a given task, the user always remembers what he or she has planned. The application offers dragging and dropping items into the appropriate containers. 
+TaskMaster is my first custom application written in react and typescript. 
 </p>
