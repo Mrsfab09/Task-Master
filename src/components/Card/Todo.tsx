@@ -2,8 +2,23 @@ import { Badge } from "@chakra-ui/layout";
 import { GoTasklist } from "react-icons/go";
 import ModalContainer from "../ModalContainer/ModalContainer";
 import Item from "./Item";
+import { useState } from "react";
 
 const Todo = () => {
+  const [todos, setTodos] = useState([
+    { name: "Zapłacić rachunki", done: false, id: 1 },
+    { name: "Wyrzucić śmieci", done: true, id: 2 },
+  ]);
+  function handleAddTask(newTodoName: string) {
+    setTodos((prevTodos) => [
+      ...prevTodos,
+      {
+        name: newTodoName,
+        done: false,
+        id: Math.random(),
+      },
+    ]);
+  }
   return (
     <div className="flex justify-between align-center">
       <div className="min-w-72 max-w-md bg-blue-200 dark:bg-sky-800 rounded-xl p-5 m-10 overflow-y-auto">
@@ -15,9 +30,12 @@ const Todo = () => {
             </Badge>
           </span>
         </div>
-        <Item colorItem="bg-blue-300 dark:bg-sky-500" />
+        {todos.map(({ name }) => (
+          <Item name={name} colorItem="bg-blue-300 dark:bg-sky-500" />
+        ))}
+
         <div className="w-full flex align-center mt-60 rounded cursor-pointer p-1 gap-2">
-          <ModalContainer />
+          <ModalContainer handleAddTask={handleAddTask} />
         </div>
       </div>
     </div>

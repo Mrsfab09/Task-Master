@@ -11,27 +11,37 @@ import {
   useDisclosure,
   Stack,
   Input,
-  useToast,
+  // useToast,
 } from "@chakra-ui/react";
 import { Textarea } from "@chakra-ui/react";
 import { useState } from "react";
 
-const ModalContainer = () => {
+interface ModalContainerProps {
+  onFormSubmit: string;
+  handleAddTask: () => void;
+}
+
+const ModalContainer: React.FC<ModalContainerProps> = ({
+  onFormSubmit,
+  handleAddTask,
+}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   const [taskValue, setTaskValue] = useState("");
   const [dateValue, setDateValue] = useState("");
   const [descValue, setDescValue] = useState("");
-  const toast = useToast();
-  const handleAddTask = () => {
-    onClose();
-    toast({
-      title: taskValue,
-      description: descValue + " data: " + dateValue,
-      status: "success",
-      duration: 5000,
-      isClosable: true,
-    });
-  };
+
+  // const toast = useToast();
+  // const handleAddTaskk = () => {
+  //   onClose();
+  //   toast({
+  //     title: taskValue,
+  //     description: descValue + " data: " + dateValue,
+  //     status: "success",
+  //     duration: 5000,
+  //     isClosable: true,
+  //   });
+  // };
   return (
     <>
       <Button
@@ -59,6 +69,9 @@ const ModalContainer = () => {
             <form
               onSubmit={(event) => {
                 event.preventDefault();
+                onFormSubmit = taskValue;
+                onFormSubmit = dateValue;
+                onFormSubmit = descValue;
               }}
             >
               <Stack spacing={8}>

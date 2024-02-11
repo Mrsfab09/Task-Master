@@ -12,22 +12,34 @@ import {
 import React from "react";
 interface ItemProps {
   colorItem: string;
+  name: string;
+  onDeleteButtonClick: () => void;
+  onEditButtonClick: () => void;
 }
 
-const Item: React.FC<ItemProps> = ({ colorItem }) => {
+const Item: React.FC<ItemProps> = ({
+  colorItem,
+  name,
+  onDeleteButtonClick,
+  onEditButtonClick,
+}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
   return (
     <div
       className={`flex mt-7 ${colorItem} rounded-lg p-3 gap-5 cursor-pointer`}
     >
-      <div className="flex align-center gap-5 text-neutral-800 font-semibold">
-        <DragHandleIcon cursor={"grab"} marginTop={"5px"} />
+      <div className="flex align-center gap-3 text-neutral-800 font-semibold">
+        <DragHandleIcon cursor={"grab"} marginTop={"4px"} />
         {/* Editable */}
-        <p>Hello</p>
+        <p>{name}</p>
         {/* <p className="text-xs font-normal mt-[6px]">17.32.2024</p> */}
-        <div className="flex align-center gap-6 ml-16 mt-[-5px]">
-          <EditIcon onClick={() => {}} marginTop={"10px"} cursor={"pointer"} />
+        <div className="flex align-center gap-3 ml-10 mt-[-5px]">
+          <EditIcon
+            onClick={onEditButtonClick}
+            marginTop={"10px"}
+            cursor={"pointer"}
+          />
           <DeleteIcon onClick={onOpen} marginTop={"10px"} cursor={"pointer"} />
         </div>
         {/* Alert */}
@@ -48,7 +60,7 @@ const Item: React.FC<ItemProps> = ({ colorItem }) => {
 
               <AlertDialogFooter>
                 <Button onClick={onClose}>Cancel</Button>
-                <Button onClick={onClose} colorScheme="red" ml={3}>
+                <Button onClick={onDeleteButtonClick} colorScheme="red" ml={3}>
                   Delete
                 </Button>
               </AlertDialogFooter>

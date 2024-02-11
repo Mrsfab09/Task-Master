@@ -1,6 +1,5 @@
 import { Badge } from "@chakra-ui/layout";
 import { MdOutlineTaskAlt } from "react-icons/md";
-import Item from "./Item";
 
 const Complete = () => {
   return (
@@ -16,7 +15,6 @@ const Complete = () => {
             </Badge>
           </span>
         </div>
-        <Item colorItem="bg-emerald-300 dark:bg-emerald-500" />
       </div>
     </div>
   );
