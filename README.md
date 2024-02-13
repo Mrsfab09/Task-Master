@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200" src="./src/assets/logo.svg">
+  <img width="150" src="./src/assets/logo.svg">
 </p>
 
 <h1 align="center">TaskMaster</h1>
