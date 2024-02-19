@@ -31,11 +31,21 @@ const Todo = () => {
           </span>
         </div>
         {todos.map(({ name }) => (
-          <Item name={name} colorItem="bg-blue-300 dark:bg-sky-500" />
+          <Item
+            name={name}
+            colorItem="bg-blue-300 dark:bg-sky-500"
+            onEditButtonClick={() => {}}
+            onDeleteButtonClick={() => {}}
+          />
         ))}
 
         <div className="w-full flex align-center mt-60 rounded cursor-pointer p-1 gap-2">
-          <ModalContainer handleAddTask={handleAddTask} />
+          <ModalContainer
+            onFormSubmit=""
+            handleAddTask={() => {
+              handleAddTask;
+            }}
+          />
         </div>
       </div>
     </div>

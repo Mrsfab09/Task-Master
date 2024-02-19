@@ -21,10 +21,7 @@ interface ModalContainerProps {
   handleAddTask: () => void;
 }
 
-const ModalContainer: React.FC<ModalContainerProps> = ({
-  onFormSubmit,
-  handleAddTask,
-}) => {
+const ModalContainer: React.FC<ModalContainerProps> = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [taskValue, setTaskValue] = useState("");
@@ -69,9 +66,9 @@ const ModalContainer: React.FC<ModalContainerProps> = ({
             <form
               onSubmit={(event) => {
                 event.preventDefault();
-                onFormSubmit = taskValue;
-                onFormSubmit = dateValue;
-                onFormSubmit = descValue;
+                // onFormSubmit = taskValue;
+                // onFormSubmit = dateValue;
+                // onFormSubmit = descValue;
               }}
             >
               <Stack spacing={8}>
@@ -105,9 +102,7 @@ const ModalContainer: React.FC<ModalContainerProps> = ({
             <Button mr={4} onClick={onClose}>
               Close
             </Button>
-            <Button colorScheme={"blue"} onClick={handleAddTask}>
-              Add
-            </Button>
+            <Button colorScheme={"blue"}>Add</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

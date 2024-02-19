@@ -1,14 +1,14 @@
 import { DragHandleIcon, EditIcon, DeleteIcon } from "@chakra-ui/icons";
-import {
-  AlertDialog,
-  AlertDialogBody,
-  AlertDialogContent,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogOverlay,
-  Button,
-  useDisclosure,
-} from "@chakra-ui/react";
+// import {
+//   AlertDialog,
+//   AlertDialogBody,
+//   AlertDialogContent,
+//   AlertDialogFooter,
+//   AlertDialogHeader,
+//   AlertDialogOverlay,
+//   Button,
+//   useDisclosure,
+// } from "@chakra-ui/react";
 import React from "react";
 interface ItemProps {
   colorItem: string;
@@ -20,11 +20,11 @@ interface ItemProps {
 const Item: React.FC<ItemProps> = ({
   colorItem,
   name,
-  onDeleteButtonClick,
+  // onDeleteButtonClick,
   onEditButtonClick,
 }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const cancelRef = React.useRef();
+  // const { isOpen, onOpen, onClose } = useDisclosure();
+  // const cancelRef = React.useRef();
   return (
     <div
       className={`flex mt-7 ${colorItem} rounded-lg p-3 gap-5 cursor-pointer`}
@@ -40,12 +40,12 @@ const Item: React.FC<ItemProps> = ({
             marginTop={"10px"}
             cursor={"pointer"}
           />
-          <DeleteIcon onClick={onOpen} marginTop={"10px"} cursor={"pointer"} />
+          <DeleteIcon marginTop={"10px"} cursor={"pointer"} />
         </div>
         {/* Alert */}
-        <AlertDialog
+        {/* <AlertDialog
           isOpen={isOpen}
-          leastDestructiveRef={cancelRef}
+          // leastDestructiveRef={cancelRef}
           onClose={onClose}
         >
           <AlertDialogOverlay>
@@ -66,7 +66,7 @@ const Item: React.FC<ItemProps> = ({
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialogOverlay>
-        </AlertDialog>
+        </AlertDialog> */}
       </div>
     </div>
   );
